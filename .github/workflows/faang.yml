@@ -28,8 +28,7 @@ jobs:
         - name: Install dependencies
           run: |
             pip install -r requirements.txt || true
-            !pip install yfinance       # in case requirements.txt does not have yfinance listed
-
+            pip install yfinance || true
 
         - name: Run faang.py
           run: |
