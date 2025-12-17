@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+# for my shebang line, I use the env command to locate the python3 interpreter in the user's environment
+# this makes the script more portable across different systems where python3 may be installed in different locations.
+# It is generally a good practice to use /usr/bin/env for shebang lines in scripts intended to be run in diverse environments.
+# I also ensure that the script file has executable permissions set using chmod +x faang.py in the terminal.
+# This allows the script to be executed directly from the command line.
+
 #faang.py 
 # Author: Cathal Redmond
 # Date: 17 Dec 2025

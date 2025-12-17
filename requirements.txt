@@ -2,3 +2,6 @@ yfinance
 numpy
 pandas
 ipython
+
+
+chmod +x faang.py
