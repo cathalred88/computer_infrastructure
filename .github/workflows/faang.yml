@@ -1,0 +1,48 @@
+name: run faang.py and push changes 
+
+on:
+    workflow_dispatch:  # this will allow for manual runs also
+
+    schedule:
+    - cron: '0 10 * * 6'  # Runs every Saturday at 10 am
+  
+    permissions:
+    contents: write  # to allow pushing changes to the repository
+
+
+jobs:
+  faang_job:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4   
+          with :
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0   
+
+        - name: Set up Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.x'
+
+        - name: Install dependencies
+          run: |
+            pip install -r requirements.txt || true
+
+
+        - name: Run faang.py
+        run: |
+            python faang.py
+
+        - name: Commit and push changes
+          run: |
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@github.com'
+            git add -A
+            git diff --cached --quiet || git commit -m "Automated update by faang.py"
+
+        -name: Push changes
+            run: |
+              git push origin HEAD:main
+
