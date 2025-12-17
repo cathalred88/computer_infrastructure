@@ -4,7 +4,3 @@ pandas
 ipython
 matplotlib
 # scipy
-
-
-
-chmod +x faang.py
