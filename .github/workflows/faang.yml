@@ -4,7 +4,7 @@ on:
     workflow_dispatch:  # this will allow for manual runs also
 
     schedule:
-    - cron: '0 10 * * 6'  # Runs every Saturday at 10 am
+    - cron: "7 10 * * 6"  # Runs every Saturday at 10:07 am #to prevent the yahoo finance blocking requests bombarding them at 10am 
   
 permissions:
     contents: write  # to allow pushing changes to the repository
