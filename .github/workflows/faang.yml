@@ -10,10 +10,10 @@ permissions:
     contents: write  # to allow pushing changes to the repository
 
 jobs:
-  run-download:
-    runs-on: ubuntu-latest
+    run-download:
+        runs-on: ubuntu-latest
 
-    steps:
+        steps:
         - name: Checkout repository
           uses: actions/checkout@v4   
           with :
@@ -45,5 +45,4 @@ jobs:
           run: |
               git push origin HEAD:main
 
-        run: |
-            echo "This job has been successfully completed."
+        - run: echo "This job has been successfully completed."
